@@ -27,21 +27,38 @@ const Header = () => {
             gradient={true}
             speed={100}
           >
-            I can be a React component, multiple React components, or just some
-            text..... I can be a React component, multiple React components, or
-            just some text.....
+            Bangladesh Army International University of Science and Technology,
+            a pioneer university of Bangladesh Army, started its journey from 14
+            February 2015 with the motto of “Knowledge, Wisdom and
+            Technology”....       It is established temporarily at the serene and
+            secured environment of Cumilla Cantonment with the mission to
+            provide State of the Art education and research in science,
+            engineering, Business Administration and other relevant programs. It
+            expects to run its affairs in permanent location from 2022....       The
+            University aims to provide innovative, multi-disciplinary courses
+            and endeavors to make a hub of knowledge....     
           </Marquee>
         </div>
         <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
           <Container>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-            <Navbar.Collapse id="responsive-navbar-nav">
+            <Navbar.Collapse id="responsive-navbar-nav ">
               <Nav className="mx-auto">
-                <Nav.Link href="#home">
-                  <Link to="/">Home</Link>
+                <Nav.Link>
+                  <Link className="text-dtcn" to="/">
+                    Home
+                  </Link>
                 </Nav.Link>
-                <Nav.Link href="#about">About</Nav.Link>
-                <Nav.Link href="#career">Career</Nav.Link>
+                <Nav.Link>
+                  <Link className="text-dtcn" to="/">
+                    About
+                  </Link>
+                </Nav.Link>
+                <Nav.Link>
+                  <Link className="text-dtcn" to="/">
+                    Career
+                  </Link>
+                </Nav.Link>
               </Nav>
               <Nav>
                 <Nav.Link href="#deets">Profile</Nav.Link>

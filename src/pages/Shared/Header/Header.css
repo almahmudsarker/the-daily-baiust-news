@@ -36,3 +36,21 @@
     background-size: 500% auto;
     animation: textShine 5s ease-in-out infinite alternate;
 }
+
+.text-dtcn{
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: 'open sans', sans-serif;
+    background: linear-gradient(to right,
+            #003a0b 20%,
+            #ff8400 30%,
+            #ffae00 70%,
+            #00570a 80%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 500% auto;
+    animation: textShine 5s ease-in-out infinite alternate;
+
+}
