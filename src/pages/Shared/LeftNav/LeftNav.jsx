@@ -1,6 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import Editors from '../../Home/Editors/Editors';
 
 const LeftNav = () => {
     const [categories, setCategories] = useState([]);
@@ -12,7 +13,7 @@ const LeftNav = () => {
         .catch(err=>console.log(err))
     },[])
     return (
-      <div>
+      <>
         <h4>All Category</h4>
         <div className="ps-4">
           {categories.map((category) => (
@@ -21,7 +22,10 @@ const LeftNav = () => {
             </p>
           ))}
         </div>
-      </div>
+        <div>
+          <Editors></Editors>
+        </div>
+      </>
     );
 };
 

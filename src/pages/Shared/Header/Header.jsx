@@ -1,25 +1,28 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
-import logo from '../../../assets/logo.png';
 import moment from "moment";
 import Button from "react-bootstrap/Button";
 import { Container } from 'react-bootstrap';
 import Marquee from "react-fast-marquee";
 import { Nav, Navbar } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import './Header.css';
 const Header = () => {
     return (
-      <Container className="mt-4">
+      <Container className="mt-4 position-sticky">
         <div className="text-center">
-          <img src={logo} alt="" />
+          <h1 className="animated-text">The Daily Baiust</h1>
           <p className="text-secondary">
             <small>Journalism Without Fear or Favour</small>
           </p>
           <p>{moment().format("dddd, MMMM D, YYYY")}</p>
         </div>
         <div className="d-flex">
-          <Button variant="success">Latest</Button>
+          <Button className="animated-text-btn" variant="success">
+            Latest
+          </Button>
           <Marquee
-            className="text-success"
+            className="text-secondary"
             pauseOnHover={true}
             gradient={true}
             speed={100}
@@ -34,7 +37,9 @@ const Header = () => {
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
               <Nav className="mx-auto">
-                <Nav.Link href="#home">Home</Nav.Link>
+                <Nav.Link href="#home">
+                  <Link to="/">Home</Link>
+                </Nav.Link>
                 <Nav.Link href="#about">About</Nav.Link>
                 <Nav.Link href="#career">Career</Nav.Link>
               </Nav>

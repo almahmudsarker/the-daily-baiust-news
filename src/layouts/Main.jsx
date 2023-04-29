@@ -8,13 +8,19 @@ import RightNav from '../pages/Shared/RightNav/RightNav';
 import { Outlet } from 'react-router-dom';
 const Main = () => {
     return (
-      <div>
+      <div className="position-relative">
         <Header></Header>
         <Container>
           <Row>
-            <Col lg={3}><LeftNav></LeftNav></Col>
-            <Col lg={6}><Outlet></Outlet></Col>
-            <Col lg={3}><RightNav></RightNav></Col>
+            <Col lg={3}>
+              <LeftNav></LeftNav>
+            </Col>
+            <Col lg={6}>
+              <Outlet></Outlet>
+            </Col>
+            <Col lg={3}>
+              <RightNav></RightNav>
+            </Col>
           </Row>
         </Container>
         <Footer></Footer>
