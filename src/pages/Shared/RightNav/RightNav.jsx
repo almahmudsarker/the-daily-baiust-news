@@ -10,7 +10,9 @@ import './rightnav.css';
 const RightNav = () => {
     return (
       <div className="my-4">
-        <h4>Login With</h4>
+        <h4 className="text-dtcn fw-bold" style={{ fontSize: "30px" }}>
+          Login With
+        </h4>
         <Button className="mb-2" variant="outline-success">
           {" "}
           <FaGoogle /> Login with Google
@@ -20,7 +22,9 @@ const RightNav = () => {
           <FaGithub /> Login with Github
         </Button>
         <div className="my-4">
-          <h4>Find us on</h4>
+          <h4 className="text-dtcn fw-bold" style={{ fontSize: "30px" }}>
+            Find us on
+          </h4>
           <ListGroup>
             <ListGroup.Item>
               <FaFacebook /> facebook

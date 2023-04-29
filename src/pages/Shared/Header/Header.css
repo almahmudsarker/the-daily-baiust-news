@@ -38,19 +38,37 @@
 }
 
 .text-dtcn{
+    margin-right: 10px;
     text-decoration: none;
     font-size: 16px;
     font-weight: 500;
     font-family: 'open sans', sans-serif;
     background: linear-gradient(to right,
             #003a0b 20%,
-            #ff8400 30%,
-            #ffae00 70%,
-            #00570a 80%);
+            #272727 30%,
+            #888888 70%,
+            #1f3821 80%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     background-size: 500% auto;
     animation: textShine 5s ease-in-out infinite alternate;
+
+}
+.text-dtcn-btn{
+    border: transparent;
+    font-size: 18px;
+    border-radius: 5px;
+    font-family: 'open sans', sans-serif;
+    background: linear-gradient(to right,
+            #006713 20%,
+            #646464 30%,
+            #b1b1b1 70%,
+            #045c0c 80%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 500% auto;
+    animation: textShine 3s ease-in-out infinite alternate;
 
 }
