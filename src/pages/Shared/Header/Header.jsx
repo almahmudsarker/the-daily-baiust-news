@@ -8,7 +8,7 @@ import Marquee from "react-fast-marquee";
 import { Nav, Navbar } from 'react-bootstrap';
 const Header = () => {
     return (
-      <Container className='mt-4'>
+      <Container className="mt-4">
         <div className="text-center">
           <img src={logo} alt="" />
           <p className="text-secondary">
@@ -18,7 +18,12 @@ const Header = () => {
         </div>
         <div className="d-flex">
           <Button variant="success">Latest</Button>
-          <Marquee className="text-success" gradient={true} speed={100}>
+          <Marquee
+            className="text-success"
+            pauseOnHover={true}
+            gradient={true}
+            speed={100}
+          >
             I can be a React component, multiple React components, or just some
             text..... I can be a React component, multiple React components, or
             just some text.....

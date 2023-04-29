@@ -1,12 +1,14 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useLoaderData, useParams } from 'react-router-dom';
 
 const Category = () => {
     const {id} = useParams();
+    const categoryNews = useLoaderData();
+    console.log(categoryNews);
     return (
         <div>
-            <h2>This is a category: {id}</h2>
+            <h2>This category news: {categoryNews.length}</h2>
         </div>
     );
 };
