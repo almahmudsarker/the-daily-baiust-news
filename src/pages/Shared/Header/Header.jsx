@@ -13,7 +13,7 @@ const Header = () => {
   
 
     return (
-      <Container className="mt-4 position-sticky">
+      <Container className="mt-4">
         <div className="text-center">
           <h1 className="animated-text">The Daily Baiust</h1>
           <p className="text-secondary">
