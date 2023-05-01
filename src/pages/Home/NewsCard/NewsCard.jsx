@@ -1,10 +1,8 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable no-unused-vars */
 import moment from 'moment/moment';
 import React from 'react';
 import { Card, Image } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { FaEye, FaRegBookmark, FaRegStar, FaShareAlt, FaStar } from 'react-icons/fa';
+import { FaEye, FaRegBookmark, FaShareAlt } from 'react-icons/fa';
 import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
 
@@ -44,10 +42,10 @@ const NewsCard = ({news}) => {
           <div className="flex-grow-1 d-flex">
             <Rating
               style={{ maxWidth: 120 }}
-              value={rating}
+              value={Math.round(rating?.number || 0)}
               readOnly
             />
-            <span className='ms-2'> {rating?.number}</span>
+            <span className="ms-2"> {rating?.number}</span>
           </div>
           <div>
             <FaEye></FaEye> {total_view}
