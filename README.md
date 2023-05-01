@@ -1,5 +1,9 @@
 # The Daily Baiust #
-The Daily Baiust is a university news portal where users can read news articles, create accounts, and comment on articles. The website is built using React and Bootstrap classes for styling. Firebase Authentication is used for user authentication, and the client-side is deployed on Firebase Hosting. The backend server is deployed on Vercel. Initial uses if signup didn't work ! please use default as - admin@gmail.com : 123456
+The Daily Baiust is a university news portal where users can read news articles, create accounts, and comment on articles. The website is built using React and Bootstrap classes for styling. Firebase Authentication is used for user authentication, and the client-side is deployed on Firebase Hosting. The backend server is deployed on Vercel.
+
+#### Visit Here ####
+https://the-daily-baiust.web.app
+* Initially login if signup didn't work ! please use default as - admin@gmail.com - 123456
 
 ## Features
 * User authentication using Firebase Authentication
