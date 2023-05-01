@@ -8,7 +8,6 @@ The Daily Baiust is a university news portal where users can read news articles,
 * Responsive design using Bootstrap classes
 
 ## Technology Used
-![image]({https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white})
 * React
 * Firebase Authentication
 * Firebase Hosting
