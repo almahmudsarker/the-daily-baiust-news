@@ -6,8 +6,11 @@ import { Link } from "react-router-dom";
 import { AuthContext } from '../../../providers/AuthProvider';
 
 const Register = () => {
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");  
 
-  const { createUser } = useContext(AuthContext);
+  const { createUser } =
+    useContext(AuthContext);
   const [accepted, setAccepted] = useState(false);
 
   const handleRegister = (event) => {
@@ -18,13 +21,23 @@ const Register = () => {
     const email = form.email.value;
     const password = form.password.value;
     console.log(name, photo, email, password);
+    if (!/(?=.*[a-z]).{8,}/.test(password)) {
+      setError(
+        "Must contain at least one number and lowercase letter, and at least 8 or more characters"
+      );
+      return;
+    }
     createUser(email, password)
       .then((result) => {
         const loggedUser = result.user;
         console.log(loggedUser);
+      setError("");
+      form.reset();
+      setSuccess("Account created successfully!");
       })
       .catch((error) => {
         console.log(error);
+        setError(error.message);
       });
   }
 
@@ -100,14 +113,14 @@ const Register = () => {
             type="submit"
             disabled={!accepted}
           >
-            <Link to='/login'>Sign up</Link>
+          Sign Me up
           </Button>
+          <p className="text-danger">{error}</p>
+          <p className="text-success">{success}</p>
           <br />
           <Form.Text className="text-dtcn" style={{ marginLeft: "116px" }}>
             Already have an account? <Link to="/login">Login</Link>
           </Form.Text>
-          <Form.Text className="text-success"></Form.Text>
-          <Form.Text className="text-danger"></Form.Text>
         </Form>
       </Container>
     );

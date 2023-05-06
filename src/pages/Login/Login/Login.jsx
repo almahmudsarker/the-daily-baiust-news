@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useRef, useState } from "react";
 import { Container } from 'react-bootstrap';
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
@@ -6,7 +6,11 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider';
 
 const Login = () => {
-  const {signIn} = useContext(AuthContext);
+ const [error, setError] = useState("");
+ const [success, setSuccess] = useState("");
+ const emailRef = useRef();
+
+  const { signIn, resetPassword } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
   console.log('login page location',location);
@@ -18,18 +22,45 @@ const Login = () => {
     const email = form.email.value;
     const password = form.password.value;
     console.log(email, password);
-
+    setError("");
+    setSuccess("");
+    if (!/(?=.*[a-z]).{8,}/.test(password)) {
+      setError(
+        "Must contain at least one number and lowercase letter, and at least 8 or more characters"
+      );
+      return;
+    }
     signIn(email, password)
       .then(result => {
         const loggedUser = result.user;
         console.log(loggedUser);
+        setError("");
+        setSuccess("Logged in successfully!");
+        form.reset();
         navigate(from, {replace: true});
       })
       .catch(error => {
         console.log(error);
+        setError(error.message);
       });
   };  
 
+  const handleResetPassword = (event) => {
+    const email = emailRef.current.value;
+    console.log(email);
+    if (!email) {
+      setError("Please enter your email address to reset your password");
+    }
+    resetPassword(email)
+      .then(() => {
+        setError("");
+        setSuccess("Please check your email for further instructions");
+      })
+      .catch((error) => {
+        console.log(error);
+        setError(error.message);
+      });
+  };
 
 
     return (
@@ -44,6 +75,7 @@ const Login = () => {
               type="email"
               name="email"
               placeholder="Enter email"
+              ref={emailRef}
               required
             />
           </Form.Group>
@@ -56,14 +88,31 @@ const Login = () => {
               required
             />
           </Form.Group>
+          <p>
+            <small>
+              Forgot Password? Please{" "}
+              <button onClick={handleResetPassword} className="btn btn-link">
+                Reset Password
+              </button>
+            </small>
+          </p>
           <Button
             className="animated-text-btn"
-            style={{ width: "100%", marginBottom: "20px", marginTop: "10px", borderColor: "gray", fontWeight: "bold", fontSize: "20px" }}
+            style={{
+              width: "100%",
+              marginBottom: "20px",
+              marginTop: "10px",
+              borderColor: "gray",
+              fontWeight: "bold",
+              fontSize: "20px",
+            }}
             variant="primary"
             type="submit"
           >
             Login
           </Button>
+          <small className="text-danger">{error}</small>
+          <small className="text-success">{success}</small>
           <br />
           <Form.Text className="text-dtcn" style={{ marginLeft: "116px" }}>
             Don't have an account? <Link to="/register">Register</Link>

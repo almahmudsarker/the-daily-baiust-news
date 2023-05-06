@@ -1,23 +1,28 @@
-// eslint-disable-next-line no-unused-vars
-import React from 'react';
+import React, { useContext } from "react";
 import Button from "react-bootstrap/Button";
 import { FaGoogle, FaGithub, FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
 import ListGroup from "react-bootstrap/ListGroup";
 import QZone from '../QZone/QZone';
 import bg from '../../../assets/bg.png';
 import './rightnav.css';
+import { AuthContext } from "../../../providers/AuthProvider";
 
 const RightNav = () => {
+  const { signInWithGoogle, signInWithGithub } = useContext(AuthContext);
     return (
       <div className="my-4">
         <h4 className="text-dtcn fw-bold" style={{ fontSize: "30px" }}>
           Login With
         </h4>
-        <Button className="mb-2" variant="outline-success">
+        <Button
+          onClick={signInWithGoogle}
+          className="mb-2"
+          variant="outline-success"
+        >
           {" "}
           <FaGoogle /> Login with Google
         </Button>
-        <Button variant="outline-warning">
+        <Button onClick={signInWithGithub} variant="outline-warning">
           {" "}
           <FaGithub /> Login with Github
         </Button>
