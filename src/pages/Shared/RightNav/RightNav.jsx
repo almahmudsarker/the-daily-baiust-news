@@ -6,6 +6,7 @@ import QZone from '../QZone/QZone';
 import bg from '../../../assets/bg.png';
 import './rightnav.css';
 import { AuthContext } from "../../../providers/AuthProvider";
+import { Link } from "react-router-dom";
 
 const RightNav = () => {
   const { signInWithGoogle, signInWithGithub } = useContext(AuthContext);
@@ -32,7 +33,11 @@ const RightNav = () => {
           </h4>
           <ListGroup>
             <ListGroup.Item>
-              <FaFacebook /> facebook
+              <FaFacebook />
+              <Link className="text-decoration-none" to="https://www.facebook.com/groups/2244562355601940">
+                {" "}
+                Facebook
+              </Link>
             </ListGroup.Item>
             <ListGroup.Item>
               <FaTwitter /> twitter

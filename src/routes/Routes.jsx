@@ -9,6 +9,8 @@ import Login from "../pages/Login/Login/Login";
 import Register from "../pages/Login/Register/Register";
 import PrivateRoute from "./PrivateRoute";
 import Terms from "../pages/Shared/Terms/Terms";
+import About from "../pages/Home/About/About";
+import Library from "../pages/Home/Library/Library";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -28,7 +30,19 @@ const router = createBrowserRouter([
       },
       {
         path: "/terms",
-        element: <Terms></Terms>
+        element: <Terms></Terms>,
+      },
+      {
+        path: "/about",
+        element: <About></About>,
+      },
+      {
+        path: "/central_library",
+        element: (
+          <PrivateRoute>
+            <Library></Library>
+          </PrivateRoute>
+        ),
       },
     ],
   },
@@ -55,7 +69,9 @@ const router = createBrowserRouter([
         path: ":id",
         element: <Category></Category>,
         loader: ({ params }) =>
-          fetch(`https://the-daily-baiust-server-almahmudsarker.vercel.app/categories/${params.id}`),
+          fetch(
+            `https://the-daily-baiust-server-almahmudsarker.vercel.app/categories/${params.id}`
+          ),
       },
     ],
   },
@@ -71,7 +87,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`https://the-daily-baiust-server-almahmudsarker.vercel.app/news/${params.id}`),
+          fetch(
+            `https://the-daily-baiust-server-almahmudsarker.vercel.app/news/${params.id}`
+          ),
       },
     ],
   },

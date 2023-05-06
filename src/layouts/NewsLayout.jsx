@@ -5,8 +5,10 @@ import Footer from '../pages/Shared/Footer/Footer';
 import Header from '../pages/Shared/Header/Header';
 import RightNav from '../pages/Shared/RightNav/RightNav';   
 import { Outlet } from 'react-router-dom';
+import useTitle from '../hooks/useTitle';
 
 const NewsLayout = () => {
+  useTitle("News");
     return (
       <div>
         <Header></Header>

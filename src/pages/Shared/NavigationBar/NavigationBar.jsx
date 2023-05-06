@@ -32,11 +32,11 @@ const NavigationBar = () => {
                 <Link className="text-dtcn" to="/category/0">
                   Home
                 </Link>
-                <Link className="text-dtcn" to="/">
+                <Link className="text-dtcn" to="/about">
                   About
                 </Link>
-                <Link className="text-dtcn" to="/">
-                  Career
+                <Link className="text-dtcn" to="/central_library">
+                  Central Library
                 </Link>
               </Nav>
               <Nav>
